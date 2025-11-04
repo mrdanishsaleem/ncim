@@ -6,6 +6,8 @@ Website for the National Center for Inspection and Monitoring (المركز ال
 
 This is a single-page Arabic (RTL) website that showcases the services offered by NCIM to government regulatory entities and inspection companies. The page features an interactive expandable card interface and includes embedded prototypes for e-services.
 
+> **⚠️ Disclaimer**: This project is for **non-commercial use only** and is intended for **educational purposes** as a **side project**. It is not affiliated with, endorsed by, or associated with the National Center for Inspection and Monitoring (NCIM) or any government entity. This is a personal learning project created for portfolio and educational demonstration purposes.
+
 ## Features
 
 - **Arabic RTL Layout**: Fully localized for Arabic language with right-to-left text direction
