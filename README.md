@@ -102,4 +102,4 @@ See [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For questions or issues related to this project, please refer to the original NCIM website: <https://ncim.gov.sa>
+For questions or issues related to this project, please contact me at [danish_s@outlook.com](mailto:danish_s@outlook.com).
