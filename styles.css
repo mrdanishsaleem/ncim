@@ -76179,6 +76179,12 @@ ul.dot-list li::before {
   width: 725.63px !important;
   height: 398.03px !important;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-section-card:hover {
+  transform: translateY(-4px) scale(1.02);
 }
 
 .new-section-card .card-body {
@@ -76314,6 +76320,8 @@ ul.dot-list li::before {
   display: flex !important;
   flex-direction: column !important;
   background-color: #ffffff !important;
+  cursor: pointer !important;
+  transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
 }
 
 /* Collapsed state - all cards same height when not active (same as expanded) */
@@ -76321,6 +76329,7 @@ ul.dot-list li::before {
   height: 100% !important;
   min-height: 100% !important;
   max-height: 100% !important;
+  transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
 }
 
 /* Ensure collapsed cards have consistent height in flex container */
@@ -76330,6 +76339,7 @@ ul.dot-list li::before {
   max-height: 100% !important;
   flex-shrink: 0 !important;
   flex-grow: 0 !important;
+  transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
 }
 
 /* Override align-items-end for collapsed cards to ensure same height */
@@ -76872,6 +76882,11 @@ hr.light {
     height: 100% !important;
     min-height: 100% !important;
     max-height: 100% !important;
+    transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
+  }
+  
+  .pipeline .main-card {
+    transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
   }
 }
 
@@ -77088,19 +77103,44 @@ html[dir=ltr] .flip-ltr {
 }
 
 /* ------------------------------- expand view ------------------------------ */
+.expand-view .main-card {
+  cursor: pointer !important;
+  transition: height 0.4s ease, min-height 0.4s ease, max-height 0.4s ease !important;
+}
+
 .expand-view .main-card.active .title {
   display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease;
 }
 .expand-view .main-card.active .desc {
   display: block;
+  opacity: 1;
+  animation: fadeIn 0.4s ease;
 }
+
 .expand-view .main-card:not(.active) .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 1;
+  transition: opacity 0.3s ease, display 0.3s ease;
 }
 .expand-view .main-card:not(.active) .desc {
   display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .truncate-2 {
@@ -77841,4 +77881,321 @@ html {
 }
 .page-wrapper {
   background-color: #2E1765 !important;
+}
+
+/* ========== INTERACTIVE ENHANCEMENTS ========== */
+
+/* Logo hover animation */
+.navbar-brand {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Icon animations */
+.new-section-card img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.new-section-card:hover img {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Accordion card icon animations */
+.main-card .card-body img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.main-card:hover .card-body img,
+.main-card .card-body:hover img {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Enhanced heading animations */
+.heading-text-bg {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.heading-text-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.heading-text-bg:hover::before {
+  left: 100%;
+}
+
+.heading-text-bg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Text reveal animation */
+h1, h2, h3, h4, h5, h6 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+h1.visible, h2.visible, h3.visible, h4.visible, h5.visible, h6.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paragraph animations */
+p {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Section visibility animations */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced card animations */
+.new-section-card .card-body {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.new-section-card:hover .card-body {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Navbar scroll effect */
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Interactive iframe container */
+.bg-glow {
+  position: relative;
+  transition: background-position 0.3s ease;
+}
+
+.bg-glow:hover {
+  background-position: center center;
+}
+
+.bg-glow iframe {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.bg-glow:hover iframe {
+  transform: scale(1.01);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Stagger animation for cards */
+.new-section-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.new-section-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.main-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.main-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.main-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.main-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.main-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus {
+  outline: 2px solid #2E1765;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Text gradient effect on hover */
+.heading-text-bg h1:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+/* Card content animation */
+.new-section-card .card-body > div {
+  transition: transform 0.3s ease;
+}
+
+.new-section-card:hover .card-body > div {
+  transform: translateY(-5px);
+}
+
+/* Ripple effect for card clicks */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(46, 23, 101, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.new-section-card,
+.main-card {
+  position: relative;
+  overflow: visible;
+}
+
+.new-section-card .card-body,
+.main-card .card-body {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth page transitions */
+body {
+  transition: opacity 0.3s ease;
+}
+
+/* Enhanced card hover with scale effect */
+.new-section-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+
+/* Icon bounce animation on hover */
+.new-section-card:hover img {
+  animation: iconBounce 0.6s ease;
+}
+
+.main-card:hover .card-body img,
+.main-card .card-body:hover img {
+  animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1.1) rotate(2deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(-2deg);
+  }
+}
+
+/* Responsive interactive adjustments */
+@media (max-width: 991.98px) {
+  .new-section-card:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .navbar-brand:hover img {
+    transform: scale(1.02);
+  }
+  
+  .new-section-card:hover img {
+    transform: scale(1.05);
+    animation: none;
+  }
+  
+  .main-card:hover .card-body img,
+  .main-card .card-body:hover img {
+    transform: scale(1.05);
+    animation: none;
+  }
 }

@@ -376,10 +376,70 @@
       });
     });
     
+    // Make new section cards clickable - scroll to howWeServe section
+    document.querySelectorAll('.new-section-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const targetSection = document.querySelector('#howWeServe');
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
     // Smooth scroll on page load - show first section immediately
     if (sections.length > 0) {
       sections[0].classList.add('visible');
     }
+    
+    // Animate headings and paragraphs when they come into view
+    const headingObserver = new IntersectionObserver(function(entries) {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 50);
+          headingObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    // Observe all headings
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+      headingObserver.observe(heading);
+    });
+    
+    // Observe paragraphs
+    document.querySelectorAll('p').forEach(paragraph => {
+      headingObserver.observe(paragraph);
+    });
+    
+    // Add ripple effect to new section cards on click
+    document.querySelectorAll('.new-section-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        const cardBody = this.querySelector('.card-body');
+        if (!cardBody) return;
+        
+        const ripple = document.createElement('span');
+        const rect = cardBody.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        cardBody.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
   })();
 </script>
 
