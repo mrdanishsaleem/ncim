@@ -76147,13 +76147,85 @@ ul.dot-list li::before {
 }
 
 /* Background for "مــــن نخــدم؟" heading */
-#howWeServe .heading-text-bg {
+#howWeServe .heading-text-bg,
+.heading-text-bg {
   background-image: url("../images/bgs/text-bg.svg") !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
   background-position: center !important;
   background-color: transparent !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  display: block !important;
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* New section cards styling */
+.new-section-card {
+  width: 725.63px !important;
+  height: 398.03px !important;
+  flex-shrink: 0;
+}
+
+.new-section-card .card-body {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 2rem !important;
+  background-color: #ffffff !important;
+  padding-top: 1.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  background-image: url("../images/icons/saudi-pattern.svg") !important;
+  background-size: auto 3.5rem !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+}
+
+.new-section-card .card-body > div.d-flex.flex-column {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  height: 100% !important;
+  align-items: center !important;
+}
+
+.new-section-card .card-body .flex-fill {
+  align-items: center !important;
+  padding-bottom: 100px !important;
+}
+
+.new-section-card .card-body img {
+  margin-bottom: 0.5rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+.new-section-card .card-body h2,
+.new-section-card .card-body h4 {
+  color: #2e1866 !important;
+  font-family: "Loew Next Arabic", sans-serif !important;
+  text-align: center !important;
+}
+
+.new-section-card .card-body > div.d-flex.flex-column {
+  align-items: center !important;
+}
+
+.new-section-card .card-body p {
+  color: #6c737f !important;
+  font-family: "Loew Next Arabic", sans-serif !important;
+  max-width: 700px !important;
+}
+
+/* Responsive styles for new section cards */
+@media (max-width: 991.98px) {
+  .new-section-card {
+    width: 100% !important;
+    max-width: 725.63px !important;
+    height: auto !important;
+    min-height: 398.03px !important;
+  }
 }
 
 /* Add gradient line under "كيف نخدمهم؟" heading and spacing */
@@ -76877,22 +76949,6 @@ hr.light {
   object-fit: contain;
 }
 
-.card-bottom-pattern {
-  overflow: hidden;
-}
-.card-bottom-pattern .pattern {
-  max-height: 70px;
-  width: 95%;
-  height: auto;
-  display: block;
-  margin: auto;
-  -webkit-transform: translateX(25%);
-  transform: translateX(25%);
-  -o-object-position: top center;
-  object-position: top center;
-  -o-object-fit: fill;
-  object-fit: fill;
-}
 
 html[dir=ltr] .flip-ltr {
   -webkit-transform: scale(-1);
