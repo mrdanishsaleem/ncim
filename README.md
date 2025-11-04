@@ -71,7 +71,6 @@ Then navigate to `http://localhost:8000` in your browser.
   - Drupal core scripts from `ncim.gov.sa`
   - Bootstrap JavaScript
   - jQuery
-  - Google Tag Manager (G-VDXZ3EHMDQ)
   - Figma embed (e-services prototype)
 
 ## Known Issues & Notes
