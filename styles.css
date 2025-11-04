@@ -545,10 +545,60 @@ body[style*="font-size"] {
 /* !!!: to set how many rows to show in element before clamp */
 
 /* Font Face Declarations */
+/* Loew Next Arabic Font */
 @font-face {
-  font-family: "IBM Plex Sans Arabic";
-  src: url("../fonts/alfont_com_IBMPlexSansArabic-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium used as regular/default weight (400) since no Regular font available */
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Loew Next Arabic";
+  src: url("../fonts/Loew Next Arabic Black.ttf") format("truetype");
+  font-weight: 950;
   font-style: normal;
   font-display: swap;
 }
@@ -595,7 +645,7 @@ html[dir=ltr] .d-ltr-flex {
 }
 
 *:not(i) {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   text-align: start;
 }
 
@@ -6588,7 +6638,7 @@ progress {
 }
 
 @font-face {
-  font-family: "IBM Plex Sans Arabic";
+  font-family: "Loew Next Arabic";
   src: url("/fonts/alfont_com_IBMPlexSansArabic-Regular.ttf");
 }
 *,
@@ -6599,7 +6649,7 @@ progress {
 }
 
 *:not(i) {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   text-align: start;
 }
 
@@ -9214,7 +9264,7 @@ th > .th-content {
 }
 
 .font-IBM {
-  font-family: '"IBM Plex Sans Arabic", sans-serif' !important;
+  font-family: '"Loew Next Arabic", sans-serif' !important;
 }
 
 .fs-10 {
@@ -49272,7 +49322,7 @@ textarea.form-control-lg {
 }
 
 .font-IBM {
-  font-family: '"IBM Plex Sans Arabic", sans-serif' !important;
+  font-family: '"Loew Next Arabic", sans-serif' !important;
 }
 
 .fs-10 {
@@ -74852,7 +74902,7 @@ html[dir=rtl] .form-check .form-check-input {
 /* -------------------------------------------------------------------------- */
 .form-label {
   text-transform: capitalize;
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-weight: 600;
   font-size: 14px;
 }
@@ -74865,19 +74915,19 @@ html[dir=rtl] .form-check .form-check-input {
 /*                                 placeholder                                */
 /* -------------------------------------------------------------------------- */
 .form-control::-webkit-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
 }
 .form-control::-moz-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
 }
 .form-control:-ms-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
 }
 .form-control::-ms-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
 }
 .form-control::placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -74990,23 +75040,23 @@ html[dir=ltr] .is-invalid.form-select {
 /*                                 placeholder                                */
 /* -------------------------------------------------------------------------- */
 .form-control::-webkit-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-size: 16;
 }
 .form-control::-moz-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-size: 16;
 }
 .form-control:-ms-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-size: 16;
 }
 .form-control::-ms-input-placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-size: 16;
 }
 .form-control::placeholder {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Loew Next Arabic", sans-serif;
   font-size: 16;
 }
 
@@ -76123,6 +76173,17 @@ ul.dot-list li::before {
   color: #2E1765 !important;
 }
 
+/* Set max-width for description paragraphs */
+#howWeServe .outer-container > p {
+  max-width: 1400px !important;
+}
+
+/* Set max-width for card description paragraphs */
+#howWeServe .main-card .desc .text-secondary-paragraph,
+#howWeServe .main-card .desc p {
+  max-width: 1400px !important;
+}
+
 /* Remove card borders */
 #howWeServe .main-card,
 #howWeServe .main-card .card-body,
@@ -76132,13 +76193,73 @@ ul.dot-list li::before {
   border-color: transparent !important;
 }
 
-/* Make cards more rounded */
+/* Make cards more rounded and ensure proper sizing */
 #howWeServe .main-card {
   border-radius: 2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #ffffff !important;
 }
 
+/* Collapsed state - all cards same height when not active (same as expanded) */
+#howWeServe .main-card.hp-collapsed {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Ensure collapsed cards have consistent height in flex container */
+#howWeServe .expand-view .main-card:not(.active) {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+/* Override align-items-end for collapsed cards to ensure same height */
+#howWeServe .expand-view.align-items-lg-end {
+  align-items: stretch !important;
+}
+
+@media (min-width: 992px) {
+  #howWeServe .expand-view.align-items-lg-end {
+    align-items: stretch !important;
+  }
+}
+
+/* Ensure all title card-body elements have the same size when collapsed */
+#howWeServe .main-card:not(.active) .title.card-body {
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure all desc card-body elements have consistent sizing */
 #howWeServe .main-card .desc.card-body {
   border-radius: 2rem !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  padding-top: 1.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Reduce gap between icon and text content */
+#howWeServe .main-card .desc.card-body img[src*="icons"] {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Reduce gap in flex container between icon and text */
+#howWeServe .main-card .desc.card-body > div.d-flex.flex-column {
+  gap: 0.5rem !important;
+  padding-bottom: 7.5rem !important;
 }
 
 #howWeServe .gradient-card {
@@ -76149,16 +76270,16 @@ html[dir=ltr] #howWeServe .gradient-card {
 }
 #howWeServe .gradient-card .card-body,
 #howWeServe .main-card .desc.card-body {
-  padding-bottom: 5rem !important;
+  padding-bottom: 0 !important;
   background-image: url("../images/icons/saudi-pattern.svg");
   background-size: auto 3.5rem;
   background-repeat: no-repeat;
-  background-position: bottom 1.5rem center;
+  background-position: bottom center;
 }
 html[dir=ltr] #howWeServe .gradient-card .card-body,
 html[dir=ltr] #howWeServe .main-card .desc.card-body {
   background-image: url("../images/icons/saudi-pattern.svg");
-  background-position: bottom 1.5rem center;
+  background-position: bottom center;
 }
 
 .bg-glow {
@@ -76628,6 +76749,14 @@ hr.light {
 @media (width >= 62em) {
   .pipeline {
     height: 450px;
+    align-items: stretch !important;
+  }
+  
+  /* Ensure all collapsed cards in pipeline have same height */
+  .pipeline .main-card:not(.active) {
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
   }
 }
 
@@ -77497,7 +77626,7 @@ hr.light {
   /* Scale pattern at bottom of cards */
   #howWeServe .main-card .desc.card-body {
     background-size: auto 4.5rem !important;
-    padding-bottom: 6rem !important;
+    padding-bottom: 0 !important;
   }
 }
 
@@ -77554,10 +77683,6 @@ hr.light {
   }
   
   /* Scale cards slightly */
-  #howWeServe .main-card {
-    padding: 1.25rem 1.75rem !important;
-  }
-  
   #howWeServe .main-card .desc.card-body {
     padding: 1.75rem 2rem !important;
   }
@@ -77592,7 +77717,7 @@ hr.light {
   /* Scale pattern at bottom of cards */
   #howWeServe .main-card .desc.card-body {
     background-size: auto 4rem !important;
-    padding-bottom: 5.5rem !important;
+    padding-bottom: 0 !important;
   }
 }
 
