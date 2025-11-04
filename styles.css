@@ -76149,15 +76149,29 @@ ul.dot-list li::before {
 /* Background for "مــــن نخــدم؟" heading */
 #howWeServe .heading-text-bg,
 .heading-text-bg {
-  background-image: url("../images/bgs/text-bg.svg") !important;
+  position: relative !important;
+  width: fit-content !important;
+  height: 70.99px !important;
+  background: linear-gradient(to left, #03A8AC, #774893) !important;
   background-repeat: no-repeat !important;
-  background-size: contain !important;
+  background-size: 100% 100% !important;
   background-position: center !important;
-  background-color: transparent !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  display: block !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 1rem !important;
   margin-right: 0 !important;
   margin-left: auto !important;
+  border: none !important;
+  border-right: none !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+#howWeServe .heading-text-bg h1,
+.heading-text-bg h1 {
+  text-align: right !important;
+  margin: 0 !important;
 }
 
 /* New section cards styling */
