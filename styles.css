@@ -76146,6 +76146,16 @@ ul.dot-list li::before {
   color: #ffffff !important;
 }
 
+/* Background for "مــــن نخــدم؟" heading */
+#howWeServe .heading-text-bg {
+  background-image: url("../images/bgs/text-bg.svg") !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-color: transparent !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
 /* Add gradient line under "كيف نخدمهم؟" heading and spacing */
 #howWeServe h3.fs-30 {
   margin-top: 2rem !important;
@@ -76155,6 +76165,25 @@ ul.dot-list li::before {
   display: inline-block;
 }
 
+/* Replace underline with SVG image */
+#howWeServe h3.heading-with-underline {
+  text-decoration: none !important;
+}
+
+#howWeServe h3.heading-with-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-image: url("../images/icons/under-line.svg") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center bottom !important;
+}
+
+/* Override the default gradient for heading-with-underline */
 #howWeServe h3.fs-30::after {
   content: '';
   position: absolute;
