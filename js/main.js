@@ -126,12 +126,55 @@
     animate();
   }
 
+  // Back to Top button
+  function initBackToTop() {
+    // Create button
+    const btn = document.createElement('button');
+    btn.id = 'backToTop';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Go to top');
+    btn.innerHTML = '\n      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">\n        <path fill="currentColor" d="M12 5l6.5 6.5-1.42 1.42L13 9.34V19h-2V9.34L6.92 12.92 5.5 11.5 12 5z"/>\n      </svg>\n    ';
+    document.body.appendChild(btn);
+
+    const showAt = 300; // px
+
+    function updateVisibility() {
+      const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrolled > showAt) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+
+    btn.addEventListener('click', function() {
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (e) {
+        // Fallback
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  function isBusinessPage() {
+    const p = (window.location.pathname || '').toLowerCase();
+    return p.endsWith('/business.html') || p.endsWith('business.html');
+  }
+
   // Initialize all interactive features
   function init() {
     initNavbarScroll();
     // Parallax is disabled by default - can be enabled if needed
     // initParallax();
     initCursorRing();
+    if (isBusinessPage()) {
+      initBackToTop();
+    }
     
     console.log('NCIM site initialized with interactive features');
   }
