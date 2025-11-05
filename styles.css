@@ -104,6 +104,27 @@ section .icon-card h6 {
   color: #2e1866 !important;
 }
 
+/* NCIM Agent cards heading color */
+.agent-card h3 {
+  color: #2e1866 !important;
+}
+
+/* Gradient-filled icons using mask; set --icon-url per element */
+.gradient-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(90deg, #03A8AC 0%, #774893 100%);
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
 section .card-item p,
 section .icon-card p {
   color: #2e1866 !important;
@@ -9932,7 +9953,7 @@ th > .th-content {
 
 .text-default {
   --bs-text-opacity: 1;
-  color: #161616 !important;
+  color: #2e1866 !important;
 }
 
 .text-default-hover:hover {
