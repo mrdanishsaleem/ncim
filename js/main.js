@@ -46,9 +46,7 @@
     const ring = document.createElement('div');
     ring.className = 'cursor-ring';
     document.body.appendChild(ring);
-    if (hasFinePointer) {
-      document.body.classList.add('cursor-enhanced');
-    }
+    // Keep native cursor visible alongside the ring
 
     let targetX = window.innerWidth / 2;
     let targetY = window.innerHeight / 2;
