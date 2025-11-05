@@ -5,6 +5,27 @@
  * @see progress.js
  */
 
+ #howWeServe .heading-text-bg,
+ .card-heading-text-bg {
+   position: relative !important;
+   width: fit-content !important;
+   height: 100% !important;
+   background: linear-gradient(to left, #03A8AC, #774893) !important;
+   background-repeat: no-repeat !important;
+   background-size: 100% 100% !important;
+   background-position: center !important;
+   box-shadow: none !important;
+   display: flex !important;
+   align-items: center !important;
+   padding: 0 1rem !important;
+   margin-right: 0 !important;
+   margin-left: auto !important;
+   border: none !important;
+   border-right: none !important;
+   border-top-right-radius: 0 !important;
+   border-bottom-right-radius: 0 !important;
+ }
+
 .progress {
   position: relative;
 }
@@ -107,6 +128,28 @@ section .icon-card h6 {
 /* NCIM Agent cards heading color */
 .agent-card h3 {
   color: #2e1866 !important;
+}
+
+/* Gradient background tile for agent icons */
+.icon-bg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #774893 0%, #03A8AC 100%);
+}
+
+/* Reduce space between icon and heading */
+.agent-card {
+  gap: 0.5rem; /* overrides gap-3 with a tighter gap */
+}
+
+/* Add more bottom padding to avoid overlap with card pattern */
+.icon-card-spaced {
+  padding-bottom: 80px; /* was 64px on .icon-card */
+  height: 240px !important; /* ensure fixed card height for the 4-card section */
 }
 
 /* Gradient-filled icons using mask; set --icon-url per element */
@@ -9009,7 +9052,7 @@ th > .th-content {
 }
 
 .p-4 {
-  padding: 1.5rem !important;
+  padding: 4.5rem !important;
 }
 
 .p-5 {
@@ -49067,7 +49110,7 @@ textarea.form-control-lg {
 }
 
 .p-4 {
-  padding: 1.5rem !important;
+  padding: 5.5rem !important;
 }
 
 .p-5 {
