@@ -1,3 +1,43 @@
+/* Interactive cursor ring (desktop only) */
+@media (pointer: fine) {
+  body.cursor-enhanced {
+    cursor: none;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: border-color 120ms ease, background-color 120ms ease, width 120ms ease, height 120ms ease;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+    will-change: transform;
+    backdrop-filter: blur(0px);
+  }
+
+  .cursor-ring.is-hover {
+    border-color: rgba(0, 0, 0, 0.6);
+    width: 44px;
+    height: 44px;
+  }
+
+  .cursor-ring.is-click {
+    background-color: rgba(0, 0, 0, 0.08);
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Light sections adaptation */
+  .cursor-ring.on-dark {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
 /* Smooth scrolling between sections */
 html {
   scroll-behavior: smooth;
