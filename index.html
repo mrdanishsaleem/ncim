@@ -84,7 +84,7 @@
 
             <!-- Card 1 -->
 
-            <div class="new-section-card">
+            <div class="new-section-card" data-href="government.html">
 
               <div class="card-body bg-white rounded-4">
 
@@ -110,7 +110,7 @@
 
             <!-- Card 2 -->
 
-            <div class="new-section-card">
+            <div class="new-section-card" data-href="business.html">
 
               <div class="card-body bg-white rounded-4">
 
@@ -1016,15 +1016,17 @@
           });
         });
 
-        // Make new section cards clickable - scroll to howWeServe section
-        document.querySelectorAll(".new-section-card").forEach((card) => {
-          card.addEventListener("click", function () {
-            const targetSection = document.querySelector("#howWeServe");
+        // Make new section cards clickable
+        document.querySelectorAll('.new-section-card').forEach((card) => {
+          card.addEventListener('click', function () {
+            const href = this.getAttribute('data-href');
+            if (href) {
+              window.location.href = href;
+              return;
+            }
+            const targetSection = document.querySelector('#howWeServe');
             if (targetSection) {
-              targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
           });
         });
