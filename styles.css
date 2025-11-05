@@ -8,6 +8,154 @@
 .progress {
   position: relative;
 }
+
+/* Ensure each section shows the Saudi pattern band at the bottom */
+section {
+  position: relative;
+  padding-bottom: 86.02px; /* space for the divider */
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 86.02px; /* divider height matches SVG */
+  background-image: url('images/icons/saudi-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 86.02px; /* full width, fixed height */
+  pointer-events: none;
+  display: block;
+}
+
+/* Force section background color across the site */
+section {
+  background-color: #2e1866 !important;
+}
+
+/* Utility: gradient heading box */
+.gradient-heading-box {
+  background: linear-gradient(90deg, #03A8AC 0%, #58629A 49%, #774893 100%);
+}
+
+/* Simple card hover */
+.card-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.icon-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden; /* clip pattern to rounded corners */
+  padding-bottom: 64px; /* space above pattern */
+}
+.icon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Saudi pattern at the bottom of icon cards */
+.icon-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45px;
+  background-image: url('images/icons/saudi-pattern.svg');
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: auto 45px;
+  pointer-events: none;
+  display: block;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+/* Ensure all section headings are white */
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  color: #ffffff !important;
+}
+
+/* Card headings and descriptions color */
+section .card-item h1,
+section .card-item h2,
+section .card-item h3,
+section .card-item h4,
+section .card-item h5,
+section .card-item h6,
+section .icon-card h1,
+section .icon-card h2,
+section .icon-card h3,
+section .icon-card h4,
+section .icon-card h5,
+section .icon-card h6 {
+  color: #2e1866 !important;
+}
+
+section .card-item p,
+section .icon-card p {
+  color: #2e1866 !important;
+}
+
+/* Fixed card size for the 8-card section */
+.cards-401x220 .card-item {
+  width: 430px;
+  height: 240px !important;
+  margin: 0 auto;
+  position: relative;
+  padding: 24px 24px 80px; /* extra space between text and pattern */
+  overflow: hidden; /* clip pattern to rounded corners */
+  cursor: pointer;
+}
+
+/* Extra spacing above card headings */
+.cards-401x220 .card-item h3 {
+  margin-top: 12px;
+}
+
+/* Apply fixed size to new-section-card bodies in the 8-card section */
+.cards-401x220 .new-section-card .card-body {
+  width: 401.08px;
+  height: 220px !important;
+}
+
+/* 4x4 grid for the text-only card section */
+.cards-401x220 .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 430px);
+  gap: 24px; /* increased spacing between cards */
+  justify-content: center;
+}
+
+/* Saudi pattern at the bottom of each card */
+.cards-401x220 .card-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45px; /* slimmer divider */
+  background-image: url('images/icons/saudi-pattern.svg');
+  background-repeat: repeat-x; /* tile horizontally like first section */
+  background-position: center bottom;
+  background-size: auto 45px; /* full width, reduced height */
+  pointer-events: none;
+  display: block;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
 .progress__track {
   min-width: 100px;
   max-width: 100%;
@@ -78050,13 +78198,7 @@ section.visible {
 }
 
 /* Stagger animation for cards */
-.new-section-card:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.new-section-card:nth-child(2) {
-  animation-delay: 0.4s;
-}
+/* removed new-section-card stagger */
 
 .main-card:nth-child(1) {
   animation-delay: 0.1s;
@@ -78109,40 +78251,15 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Card content animation */
-.new-section-card .card-body > div {
-  transition: transform 0.3s ease;
-}
+/* removed new-section-card content hover animation */
 
-.new-section-card:hover .card-body > div {
-  transform: translateY(-5px);
-}
+/* removed ripple effect for deleted new-section-card */
 
-/* Ripple effect for card clicks */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(46, 23, 101, 0.3);
-  transform: scale(0);
-  animation: ripple-animation 0.6s ease-out;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-.new-section-card,
 .main-card {
   position: relative;
   overflow: visible;
 }
 
-.new-section-card .card-body,
 .main-card .card-body {
   position: relative;
   overflow: hidden;
@@ -78153,16 +78270,10 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Enhanced card hover with scale effect */
-.new-section-card:hover {
-  transform: translateY(-4px) scale(1.02);
-}
+/* removed new-section-card hover scale */
 
 
-/* Icon bounce animation on hover */
-.new-section-card:hover img {
-  animation: iconBounce 0.6s ease;
-}
+/* removed new-section-card image bounce */
 
 .main-card:hover .card-body img,
 .main-card .card-body:hover img {
@@ -78180,18 +78291,13 @@ body {
 
 /* Responsive interactive adjustments */
 @media (max-width: 991.98px) {
-  .new-section-card:hover {
-    transform: translateY(-2px) scale(1.01);
-  }
+  /* removed new-section-card hover tweaks */
   
   .navbar-brand:hover img {
     transform: scale(1.02);
   }
   
-  .new-section-card:hover img {
-    transform: scale(1.05);
-    animation: none;
-  }
+  /* removed new-section-card image overrides */
   
   .main-card:hover .card-body img,
   .main-card .card-body:hover img {
