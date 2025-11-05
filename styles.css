@@ -77916,6 +77916,10 @@ hr.light {
     font-size: 3rem !important;
   }
   
+  .fs-48 {
+    font-size: 4.5rem !important;
+  }
+  
   /* Scale headings */
   h2.fs-36 {
     font-size: 3rem !important;
@@ -77931,6 +77935,27 @@ hr.light {
   
   h5.fs-20 {
     font-size: 1.875rem !important;
+  }
+  
+  /* Heading rhythm and spacing for 4K */
+  h1[class*="fs-"],
+  h2[class*="fs-"],
+  h3[class*="fs-"] {
+    line-height: 1.15 !important;
+  }
+  h1[class*="fs-"] {
+    margin-bottom: 2rem !important;
+  }
+  h2[class*="fs-"] {
+    margin-bottom: 1.5rem !important;
+  }
+  h3[class*="fs-"] {
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Increase heading badge padding */
+  .heading-text-bg {
+    padding: 1.25rem 1.75rem !important;
   }
   
   /* Scale cards and containers */
